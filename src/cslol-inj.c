@@ -15,6 +15,7 @@ int main() {
     // Grab args.
     if (argc < 2) {
         puts("No profile path provided!");
+        system("pause");
         return -1;
     }
 
@@ -23,6 +24,7 @@ int main() {
         const char* error = cslol_init();
         if (error) {
             printf("Failed to init: %s\n", error);
+            system("pause");
             return -1;
         }
     }
@@ -34,6 +36,7 @@ int main() {
         const char* error = cslol_set_config((const char16_t*)argv[1]);
         if (error) {
             printf("Failed to set prefix: %s\n", error);
+            system("pause");
             return -1;
         }
     }
@@ -50,6 +53,7 @@ int main() {
             const char* error = cslol_hook(tid, 30000, 100);
             if (error) {
                 printf("Failed to hook: %s\n", error);
+                system("pause");
                 return -1;
             }
         }
